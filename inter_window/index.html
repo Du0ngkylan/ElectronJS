@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Main Window</title>
+    <script>
+      const comm = require('electron').remote.require('./comm');
+      var data = {
+        text: "This message is from Main window.",
+        callback: function(msg) {
+          console.log(`callback: msg=${msg}`);
+          document.querySelector('#mess').innerHTML = msg;
+        },
+      }
+
+      function openSub() {
+        comm.openSubWindow(data);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Hello, electron!</h1>
+    <p>This is test program for electron</p>
+    <button onclick="openSub();">Open sub window</button>
+    <p>Message from sub window:</p><p id="mess"></p>
+
+  </body>
+</html>

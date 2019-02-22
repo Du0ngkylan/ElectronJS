@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Electron Read Us</title>
+    <script>
+      const comm = require('electron').remote.require('./comm');
+
+      function checkMassageAndReply() {
+        const data = comm.getData();
+        let txt = document.getElementById("txt").value;
+        data.callback(txt);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Sub Window</h1>
+    <p>This is test program for electron</p>
+    Message send main: <input type="text" id = "txt" name="sendata" value="Input message..."><br>
+    <button onclick="checkMassageAndReply();">send message</button>
+  </body>
+</html>
