@@ -9,7 +9,7 @@ module.exports = {
   openSubWindow(data_) {
     this.subWindow = new BrowserWindow({ width:400, height:400, show: true });
     this.subWindow.loadURL('file://' + __dirname + '/subwin.html');
-		//this.subWindow.setMenu(null);
+    //this.subWindow.setMenu(null);
     this.data = data_;
     console.log('data', this.data);
     /*
