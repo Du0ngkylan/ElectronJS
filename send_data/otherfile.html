@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Electron Second Window</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1">
+    </head>
+    <body>
+        <div id="app">
+            Hello Second Window
+            <br />
+            <span id="label">Hello This Label Will be updated </span>
+        </div>
+
+        <script>
+            const { ipcRenderer } = require('electron');
+
+            ipcRenderer.on('action-update-label', (event, arg) => {
+
+                // Update the second window label content with the data sent from
+                // the first window :) !
+                let label = document.getElementById("label");
+
+                label.innerHTML = arg.message;
+                label.style.color = arg.color;
+                label.style.backgroundColor = arg.backgroundColor;
+            });
+        </script>
+    </body>
+</html>

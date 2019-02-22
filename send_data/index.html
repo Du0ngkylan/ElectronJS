@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Electron Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1">
+  </head>
+  <body>
+    <div id="app">
+        Hello First Window
+        <br />
+        <input type="text" id="field" value="This String Will be Sent to the second Window" />
+        <input type="button" id="btn" value="Update Label in Second Window with Text" />
+    </div>
+
+    <script>
+      const { ipcRenderer } = require('electron');
+
+      document.getElementById("btn").addEventListener("click", () => {
+        // data sẽ được gửi đến main process
+        let Data = {
+            message: document.getElementById("field").value,
+            backgroundColor: "black",
+            color: 'white'
+        };
+
+        // Trigger the event listener action to this event in the renderer process and send the data
+        ipcRenderer.send('request-update-label-in-second-window', Data);
+      }, false);
+    </script>
+  </body>
+</html>
