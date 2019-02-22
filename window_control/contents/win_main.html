@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Electron Read Us</title>
+  </head>
+  <body>
+    <h1>Main window</h1>
+    <p>This electron program is for testing WindowBrowser class.</p>
+    <button type="button" onClick="showChildWindow('album1');">Show Child Window 1</button>
+    <button type="button" onClick="showChildWindow('album2');">Show Child Window 2</button>
+    <script>
+      var winControl = require('electron').remote.require('./lib/windowControl');
+
+      function showChildWindow(target) {
+        winControl.showAlbumWindow(target);
+      }
+
+      window.addEventListener('contextmenu', function(e) {
+        console.log('contextmenu event.');
+        winControl.showAutocloseWindow();
+      }, false);
+    </script>
+  </body>
+</html>
