@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <title>Mini Game</title>
+</head>
+<body>
+  <h1>Main window</h1>
+  <button id="start" class="button-start" type="button" style="margin-top:30px; margin-left:20px; float:left;">
+    Start
+  </button>
+      <script>
+      var winControl = require('electron').remote.require('./lib/windowControl');
+
+      function showChildWindow() {
+        winControl.showPlayWindow();
+      }
+
+      window.addEventListener('contextmenu', function(e) {
+        console.log('contextmenu event.');
+        winControl.showPlayWindow();
+      }, false);
+    </script>
+  <script type="text/javascript" src="js/option.js"></script>
+</body>
+
+</html>
