@@ -3,26 +3,18 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
   <title>Mini Game</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
-  <h1>Main window</h1>
-  <button id="start" class="button-start" type="button" style="margin-top:30px; margin-left:20px; float:left;">
-    Start
-  </button>
-      <script>
-      var winControl = require('electron').remote.require('./lib/windowControl');
-
-      function showChildWindow() {
-        winControl.showPlayWindow();
-      }
-
-      window.addEventListener('contextmenu', function(e) {
-        console.log('contextmenu event.');
-        winControl.showPlayWindow();
-      }, false);
-    </script>
+  <h1 class="title">Mini Game</h1>
+  <div class="menu u--visible" id="menuBox">
+    <ul>
+      <li class="button button--start" id="startLnk" data-show="startBox" data-hide="menuBox">Start</li>
+      <li class="button button--scores" id="optionLnk" data-show="scoresBox" data-hide="menuBox">Option</li>
+      <li class="button button--about" id="aboutLnk" data-show="aboutBox" data-hide="menuBox">About</li>
+    </ul>
+  </div>
   <script type="text/javascript" src="js/option.js"></script>
 </body>
 
