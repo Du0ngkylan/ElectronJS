@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Game</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- <script type="text/javascript" src="js/jquery-3.1.0.js"></script> -->
+  <!-- <script src="js/jquery-1.10.2.min.js"></script> -->
+</head>
+
+<body>
+  <div id="stages">
+    <div class="stage" id="menuBox">
+      <h1 class="title">Đuổi Hình Bắt Chữ</h1>
+      <ul>
+        <li class="button button-start" id="startLnk" data-show="startBox" data-hide="menuBox">Start</li>
+        <li class="button button-scores" id="optionLnk" data-show="scoresBox" data-hide="menuBox">Option</li>
+        <li class="button button-about" id="aboutLnk" data-show="aboutBox" data-hide="menuBox">About</li>
+      </ul>
+    </div>
+    <div id="play" class="stage hide">
+      <div class="header">
+        <div id="abackhome" class="backhome"></div>
+        <div class="level"><i></i></div>
+        <div class="hint"></div>
+        <div class="points"><i></i></div>
+      </div>
+      <div class="body">
+        <img id="image">
+      </div>
+      <div class="answer">
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+      </div>
+      <div class="keyboard">
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+      </div>
+    </div>
+  </div>
+  <script>window.$ = window.jQuery = require("../vendor/jquery/jquery-3.1.0.js");</script>
+  <script src="js/data.min.js"></script>
+  <script type="text/javascript" src="js/option.js"></script>
+</body>
+
+</html>
