@@ -11,6 +11,6 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "electron": "^1.7.9"
+    "electron": "^9.1.0"
   }
 }
