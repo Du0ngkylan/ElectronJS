@@ -10,6 +10,6 @@
   "author": "DuongMX",
   "license": "UNLICENSED",
   "devDependencies": {
-    "electron": "^1.7.11"
+    "electron": "^9.1.0"
   }
 }
